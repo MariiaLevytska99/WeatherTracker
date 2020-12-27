@@ -1,0 +1,24 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-radio-button {
+  background-color: white;
+  color: black;
+}
+
+.mat-radio-button-selected {
+  background-color: #E91E63;
+  color: white;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 17px;
+}
+
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+

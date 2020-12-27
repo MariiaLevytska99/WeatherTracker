@@ -2,13 +2,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { WeatherChartComponent } from './weather-chart/weather-chart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule} from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherChartComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatCardModule,
+    MatToolbarModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
