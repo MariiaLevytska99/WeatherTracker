@@ -3,8 +3,9 @@
 }
 
 .mat-radio-button {
-  background-color: white;
+  background-color: transparent;
   color: black;
+  padding: 10px;
 }
 
 .mat-radio-button-selected {

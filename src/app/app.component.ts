@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   title = 'weather-tracker';
   public temperatures;
   public forecast: Array<Forecast>;
+  displayedColumns: string[] = ['date', 'temperature'];
 
   public model: go.GraphLinksModel = $(go.GraphLinksModel,
     {
