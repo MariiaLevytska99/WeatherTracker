@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, Output} from '@angular/core';
 import * as go from 'gojs';
 import {Spot} from 'gojs';
 
@@ -11,12 +11,15 @@ const $ = go.GraphObject.make;
 })
 export class WeatherChartComponent implements OnInit, AfterViewInit {
 
+  @Output()
   public diagram: go.Diagram = null;
 
   @Input()
   public model: go.Model;
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -107,6 +110,26 @@ export class WeatherChartComponent implements OnInit, AfterViewInit {
         )
       );
     this.diagram.model = this.model;
+  }
+
+  myCallback(blob): void {
+    const url = window.URL.createObjectURL(blob);
+    const filename = 'chart.png';
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+
+    // tslint:disable-next-line:only-arrow-functions
+    requestAnimationFrame(function() {
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    });
+  }
+
+  downloadChart(): void {
+    const blob = this.diagram.makeImageData({ background: 'white', returnType: 'blob', callback: this.myCallback });
   }
 
 }

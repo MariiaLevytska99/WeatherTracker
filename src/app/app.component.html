@@ -6,9 +6,10 @@
     <mat-radio-button [value]="eUnits.Celsius">Celsius</mat-radio-button>
     <mat-radio-button [value]="eUnits.Fahrenheit">Fahrenheit</mat-radio-button>
   </mat-radio-group>
+  <button mat-raised-button color="accent" (click)="downloadChart()">Download chart</button>
 </mat-toolbar>
 
-<app-weather-chart [model]="model"></app-weather-chart>
+<app-weather-chart id="myDiagram" [model]="model" ></app-weather-chart>
 
 <mat-expansion-panel>
   <mat-expansion-panel-header>

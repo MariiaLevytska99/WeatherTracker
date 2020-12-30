@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import * as go from 'gojs';
 import {WeatherService} from './services/weather-tracker.service';
 import {Location} from './models/Location';
 import {Forecast} from './models/Forecast';
 import {Units} from './models/Units';
+import {WeatherChartComponent} from './weather-chart/weather-chart.component';
 
 const $ = go.GraphObject.make;
 
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
   public temperatures;
   public forecast: Array<Forecast>;
   displayedColumns: string[] = ['date', 'temperature'];
+  @ViewChild(WeatherChartComponent) chart: WeatherChartComponent;
 
   public model: go.GraphLinksModel = $(go.GraphLinksModel,
     {
@@ -69,5 +71,9 @@ export class AppComponent implements OnInit {
   onChange(value: any): void {
     this.selectedTempUnit = value;
     this.getTemperaturesForChart(this.cityCoordinates, this.selectedTempUnit);
+  }
+
+  downloadChart() {
+    this.chart.downloadChart();
   }
 }

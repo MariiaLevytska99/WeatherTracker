@@ -11,6 +11,7 @@ import {Units} from '../models/Units';
 })
 export class WeatherService {
 
+
   constructor(private http: HttpClient) { }
 
   getForecast(location: Location, units: Units): Observable<any> {
