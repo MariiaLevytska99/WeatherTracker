@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
     this.getTemperaturesForChart(this.cityCoordinates, this.selectedTempUnit);
   }
 
-  downloadChart() {
+  downloadChart(): void {
     this.chart.downloadChart();
   }
 }

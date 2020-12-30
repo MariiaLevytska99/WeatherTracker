@@ -21,12 +21,11 @@
     </mat-panel-description>
   </mat-expansion-panel-header>
   <mat-card class="card">
-
     <mat-card-content>
       <ng-container *ngIf="forecast == null || forecast.length == 0">
         <mat-progress-spinner color="warn" mode="indeterminate"></mat-progress-spinner>
       </ng-container>
-      <ng-container *ngFor="let date of forecast" >
+      <ng-container *ngFor="let date of forecast.slice(0, 7)" >
         <div class="list-container">
         <span>
           {{date.date*1000 | date}} : average day temperature - {{date.temperature}} {{selectedTempUnit === eUnits.Celsius ? 'C' : 'F'}}
