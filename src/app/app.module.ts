@@ -12,8 +12,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
-import {CdkTableModule} from "@angular/cdk/table";
-import {MatButtonModule} from "@angular/material/button";
+import {CdkTableModule} from '@angular/cdk/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatButtonModule} from "@angular/material/button";
         MatExpansionModule,
         MatTableModule,
         CdkTableModule,
-        MatButtonModule
+        MatButtonModule,
+        MatProgressSpinnerModule
     ],
   providers: [],
   bootstrap: [AppComponent]
